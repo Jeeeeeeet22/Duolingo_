@@ -7,9 +7,9 @@ export const Header = () => {
   return (
     <header className="w-full border-b h-20 px-4 lg:px-8 flex items-center justify-between">
       {/* Left: Logo */}
-      <div className="flex items-center gap-2">
+      <div className="pt-6 pl-4 pb-7 flex items-center gap-x-3">
         <Image src="/mascot.svg" alt="Logo" width={40} height={40} />
-        <h1 className="text-2xl font-extrabold text-emerald-600">Lingo!</h1>
+        <h1 className="text-2xl font-extrabold text-emerald-600 tracking-wide">Lingo!</h1>
       </div>
 
       {/* Right: Auth buttons */}
