@@ -43,7 +43,7 @@ export const LessonButton = ({
     const rightPosition = indentationLevel * 40;
 
     const isFirst = index === 0;
-    const isLast = index === totalCount-1;
+    const isLast = index === totalCount;
     const isCompleted = !current && !locked;
 
     const Icon = isCompleted ? Check : isLast ? Crown : Star;

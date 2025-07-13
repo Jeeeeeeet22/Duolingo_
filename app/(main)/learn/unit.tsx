@@ -1,24 +1,24 @@
-import {lessons,units} from "@/db/schema";
+import { lessons, units } from "@/db/schema";
 import { UnitBanner } from "./unit-banner";
 import { LessonButton } from "./lesson-button";
 
-type Props ={
-    id:number;
-    order:number;
-    title:string;
-    description:string;
-    lessons:(typeof lessons.$inferSelect &{
-        completed:boolean;
+type Props = {
+    id: number;
+    order: number;
+    title: string;
+    description: string;
+    lessons: (typeof lessons.$inferSelect & {
+        completed: boolean;
     })[];
-    
 
-    activeLesson: typeof lessons.$inferSelect &{
-        unit:typeof units.$inferSelect;
+
+    activeLesson: typeof lessons.$inferSelect & {
+        unit: typeof units.$inferSelect;
     } | undefined;
-    activeLessonPercentage:number;
+    activeLessonPercentage: number;
 };
 
-export const Unit=({
+export const Unit = ({
     id,
     order,
     title,
@@ -26,29 +26,29 @@ export const Unit=({
     lessons,
     activeLesson,
     activeLessonPercentage,
-}:Props)=>{
-    return(
-      <>
-      <UnitBanner title={title} description={description}/>
-      <div className="flex items-center flex-col relative">
-        {lessons.map((lesson,index)=> {
-            const isCurrent =lesson.id === activeLesson?.id;
-            const isLocked =!lesson.completed && !isCurrent;
+}: Props) => {
+    return (
+        <>
+            <UnitBanner title={title} description={description} />
+            <div className="flex items-center flex-col relative">
+                {lessons.map((lesson, index) => {
+                    const isCurrent = lesson.id === activeLesson?.id;
+                    const isLocked = !lesson.completed && !isCurrent;
 
-            return(
-                <LessonButton 
-                 key={lesson.id}
-                 id={lesson.id} 
-                 index={index}
-                 totalCount={lessons.length - 1 }
-                 current={isCurrent}
-                 locked={isLocked}
-                 percentage={activeLessonPercentage}
-                />
-            )
-        })}
-      </div>
-      </>
+                    return (
+                        <LessonButton
+                            key={lesson.id}
+                            id={lesson.id}
+                            index={index}
+                            totalCount={lessons.length - 1}
+                            current={isCurrent}
+                            locked={isLocked}
+                            percentage={activeLessonPercentage}
+                        />
+                    )
+                })}
+            </div>
+        </>
 
     );
 }
