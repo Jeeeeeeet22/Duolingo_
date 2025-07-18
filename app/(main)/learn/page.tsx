@@ -6,7 +6,7 @@ import { getUserProgress, getUnits, getCourseProgress, getLessonPercentage } fro
 import { redirect } from "next/navigation";  
 import { Unit } from "./unit";
 import { lessons, units as Unitsschema } from "@/db/schema";
-import { ExitModal } from "@/store/exit-modal"; // 🆕 import this!
+import { ExitModal } from "@/components/modals/exit-modal"; // 🆕 import this!
 
 const LearnPage = async () => {
   const userProgressData = getUserProgress();

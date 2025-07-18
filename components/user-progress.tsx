@@ -17,7 +17,7 @@ export const UserProgress = ({ activeCourse, points, hearts, hasActiveSubscripti
           <Image
             src={activeCourse.imageSrc}
             alt={activeCourse.title}
-            className="rounded-md border"
+            className="rounded-md border "
             width={32}
             height={32} />
         </Button>
