@@ -44,9 +44,9 @@ const stripeSession=await stripe.checkout.sessions.create({
             unit_amount:200000,
             recurring:{
                 interval:"month",
-            }
-        }
-    }
+            },
+        },
+    },
 ],
 metadata:{
     userId,
